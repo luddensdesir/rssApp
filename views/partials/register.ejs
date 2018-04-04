@@ -1,0 +1,27 @@
+<div id = "registerForm" ng-controller = "rightBar">
+  <div ng-model = "destroyCotroller">
+    <div ng-start-up = 'destroyController'>
+      <h2 class="">Register:</h2>
+      <button type="submit" style = "margin-top: 10px;" class = "button loginButton" id = "actionSelect" data-target="users/loginPage"/>[login]</button>
+
+      <form id = "submitForm" method="post" action="users/register">
+        <div class="">
+          <input type="text" maxlength="50" class="rightField" placeholder="[name]" name="name">
+        </div>
+        <div class="">
+          <input type="text" maxlength="16" class="rightField" placeholder="[username]" name="username">
+        </div>
+        <div class="">
+          <input type="email"  class="rightField" placeholder="[email]" name="email">
+        </div>
+        <div class="">
+          <input type="password" maxlength="32" class="rightField" placeholder="[password]" name="password">
+        </div>
+        <div class="">
+          <input type="password" maxlength="32" class="rightField" placeholder="[password]" name="password2">
+        </div>
+        <button type="Submit" class="button btn btn-default">[submit]</button>
+      </form>
+    </div>
+  </div>
+</div>

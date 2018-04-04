@@ -1,0 +1,847 @@
+/* line 15, ../sass/styles.scss */
+html {
+  background-color: #ededed;
+}
+
+/* line 21, ../sass/styles.scss */
+.sidebar {
+  width: 300px;
+  background-color: white;
+  height: 100%;
+  top: 0px;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+/* line 30, ../sass/styles.scss */
+.sidebar .container {
+  height: 100%;
+  background-color: #f4f4f4;
+  box-sizing: content-box;
+}
+
+/* line 38, ../sass/styles.scss */
+#leftBarOpen {
+  float: left;
+  left: 0%;
+}
+
+/* line 43, ../sass/styles.scss */
+#rightBarOpen {
+  float: right;
+  right: 0%;
+}
+
+/* line 48, ../sass/styles.scss */
+.openTab {
+  width: 40px;
+  position: absolute;
+  height: 100%;
+  background-color: #A2C2DB;
+  opacity: .5;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* line 58, ../sass/styles.scss */
+.arrow {
+  border-right: 10px solid black;
+  border-bottom: 10px solid black;
+  width: 20px;
+  height: 20px;
+  margin-top: 40px;
+  position: absolute;
+}
+
+/* line 68, ../sass/styles.scss */
+.leftarrow {
+  transform: rotate(135deg);
+  left: 15px;
+}
+
+/* line 73, ../sass/styles.scss */
+.rightarrow {
+  transform: rotate(-45deg);
+  right: 15px;
+}
+
+/* line 79, ../sass/styles.scss */
+#main {
+  width: 944px;
+  height: 100%;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  position: absolute;
+  margin-left: 50vw;
+  transform: translateX(-50%);
+  left: -0px;
+  z-index: 3;
+}
+
+/* line 100, ../sass/styles.scss */
+#stream {
+  background-color: #f4f4f4;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 0px;
+  padding-top: 50px;
+  overflow-x: hidden;
+  padding-left: 15px;
+}
+/* line 112, ../sass/styles.scss */
+#stream div {
+  width: 100%;
+  height: 99%;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-right: 15px;
+}
+
+/* line 124, ../sass/styles.scss */
+.mainleft {
+  margin-left: 300px !important;
+}
+
+/* line 128, ../sass/styles.scss */
+.mainright {
+  marginLeft: 300px !important;
+}
+
+/* line 133, ../sass/styles.scss */
+#searchBar {
+  width: 100%;
+}
+
+/* line 137, ../sass/styles.scss */
+.renameButton {
+  border: 3px solid black;
+  outline: 0px;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+/* line 144, ../sass/styles.scss */
+.folderButton {
+  text-align: left;
+  min-width: 80px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 153, ../sass/styles.scss */
+#rClickMenu {
+  z-index: 15;
+  margin: auto;
+  position: absolute;
+  display: none;
+  width: 125px;
+  background-color: #F2F2F2;
+  border: 3px solid black;
+  overflow: hidden;
+}
+/* line 162, ../sass/styles.scss */
+#rClickMenu p {
+  margin: 0px;
+}
+/* line 167, ../sass/styles.scss */
+#rClickMenu ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 172, ../sass/styles.scss */
+#rClickMenu ul li input {
+  padding: 1px;
+  padding-left: 5px;
+  text-align: left;
+  width: 100%;
+  border: 0px;
+}
+
+/* line 183, ../sass/styles.scss */
+.field {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 2px;
+  border-bottom: 2px;
+  width: 100%;
+  margin: auto;
+  height: 20px;
+  padding: 0px;
+  text-align: center;
+  position: relative;
+}
+/* line 195, ../sass/styles.scss */
+.field:focus {
+  outline: none;
+}
+
+/* line 200, ../sass/styles.scss */
+.folder {
+  opacity: 0;
+}
+
+/* line 205, ../sass/styles.scss */
+.folder:nth-child(2n+0) {
+  left: 250px;
+  position: relative;
+}
+
+/* line 210, ../sass/styles.scss */
+.folder:nth-child(2n+1) {
+  left: 250px;
+  position: relative;
+}
+
+/* line 216, ../sass/styles.scss */
+.noOffset {
+  left: 0px !important;
+  opacity: 1;
+}
+
+/* line 221, ../sass/styles.scss */
+.searchfield {
+  margin: auto;
+  margin-top: 0px;
+  width: 80%;
+  float: left;
+}
+
+/* line 229, ../sass/styles.scss */
+.folderSubButton {
+  margin-bottom: 5px;
+  margin-left: 0px;
+  min-width: 70px;
+}
+
+/* line 235, ../sass/styles.scss */
+.rightButton {
+  float: right;
+}
+
+/* line 239, ../sass/styles.scss */
+.sidebar .container {
+  padding-top: 25px;
+}
+
+/* line 243, ../sass/styles.scss */
+.subTitle {
+  margin-bottom: 10px;
+}
+
+/* line 247, ../sass/styles.scss */
+#searchBar input {
+  float: left;
+}
+
+/* line 251, ../sass/styles.scss */
+.clear {
+  clear: both;
+  border-bottom: 1px solid black;
+  width: 45%;
+  margin: auto;
+}
+
+/* line 258, ../sass/styles.scss */
+.searchButton {
+  width: 10%;
+  height: 100%;
+}
+
+/* line 263, ../sass/styles.scss */
+.container {
+  width: 90%;
+  margin: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-sizing: border-box;
+  background-color: #F2F2F2;
+}
+
+/* line 272, ../sass/styles.scss */
+.feedItem {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+/* line 276, ../sass/styles.scss */
+.feedItem a {
+  text-decoration: none;
+  color: #262626;
+}
+/* line 281, ../sass/styles.scss */
+.feedItem:hover {
+  background-color: black;
+}
+/* line 283, ../sass/styles.scss */
+.feedItem:hover a {
+  color: white;
+}
+
+/* line 289, ../sass/styles.scss */
+.anim {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+/* line 296, ../sass/styles.scss */
+.feedItem:nth-child(2n+0) {
+  left: 1000px;
+  position: relative;
+  background-color: #e6e6e6;
+}
+/* line 301, ../sass/styles.scss */
+.feedItem:nth-child(2n+0):hover {
+  background-color: black;
+}
+/* line 303, ../sass/styles.scss */
+.feedItem:nth-child(2n+0):hover a {
+  color: white;
+}
+
+/* line 309, ../sass/styles.scss */
+.feedItem:nth-child(2n+1) {
+  left: -1000px;
+  position: relative;
+}
+/* line 312, ../sass/styles.scss */
+.feedItem:nth-child(2n+1):hover {
+  background-color: black;
+}
+/* line 314, ../sass/styles.scss */
+.feedItem:nth-child(2n+1):hover a {
+  color: white;
+}
+
+/* line 320, ../sass/styles.scss */
+.mask {
+  opacity: .5;
+  z-index: -5;
+  background-color: #010101;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  margin: auto;
+}
+
+/* line 334, ../sass/styles.scss */
+#confirmButt {
+  left: 45%;
+}
+
+/* line 338, ../sass/styles.scss */
+#denyButt {
+  left: 55%;
+}
+
+/* line 342, ../sass/styles.scss */
+.centered {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  margin: auto;
+}
+
+/* line 351, ../sass/styles.scss */
+.dialogue {
+  z-index: 11;
+  border: 3px solid black;
+  width: 600px;
+  height: 200px;
+  display: none;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: red;
+  word-wrap: break-word;
+}
+/* line 364, ../sass/styles.scss */
+.dialogue p {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 90%;
+  color: black;
+  position: absolute;
+  z-index: 10;
+}
+/* line 377, ../sass/styles.scss */
+.dialogue .button {
+  bottom: 20px;
+  left: 0%;
+  position: absolute;
+}
+/* line 382, ../sass/styles.scss */
+.dialogue .tutorialBg {
+  background-color: #F2F2F2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+/* line 391, ../sass/styles.scss */
+.ng-binding {
+  margin: 0px;
+}
+
+/* line 395, ../sass/styles.scss */
+span {
+  padding-right: 10px;
+}
+
+@media (max-width: 700px) {
+  /* line 401, ../sass/styles.scss */
+  .dialogue {
+    width: 85%;
+  }
+}
+/* line 406, ../sass/styles.scss */
+.loginButton {
+  margin-bottom: 10px;
+}
+
+/* line 410, ../sass/styles.scss */
+.registerButton {
+  float: right;
+  margin-bottom: 10px;
+}
+
+/* line 415, ../sass/styles.scss */
+.rightField {
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+/* line 420, ../sass/styles.scss */
+h2, h5 {
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-style: oblique;
+}
+
+/* line 426, ../sass/styles.scss */
+h2 {
+  border-bottom: 3px solid black;
+}
+
+/* line 430, ../sass/styles.scss */
+#feedList {
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 436, ../sass/styles.scss */
+.optionsContainer {
+  width: 260px;
+  margin: auto;
+  height: 100%;
+  position: absolute;
+  height: auto;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+/* line 447, ../sass/styles.scss */
+.subList {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  padding-left: 10px;
+}
+
+/* line 453, ../sass/styles.scss */
+li {
+  list-style: none;
+}
+
+/* line 457, ../sass/styles.scss */
+h1 {
+  margin-top: 0px;
+}
+
+/* line 460, ../sass/styles.scss */
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  font-family: arial;
+}
+
+/* line 471, ../sass/styles.scss */
+#accountInfo div h2 {
+  text-align: center;
+}
+
+/* line 477, ../sass/styles.scss */
+#rightBar {
+  right: -300px;
+  right: 0px;
+  overflow-y: auto;
+  overflow: hidden;
+  border-left: 3px solid black;
+}
+
+/* line 485, ../sass/styles.scss */
+#leftBar {
+  float: left;
+  overflow: hidden;
+  border-right: 3px solid black;
+}
+/* line 492, ../sass/styles.scss */
+#leftBar .folderList {
+  padding-bottom: 140px;
+}
+/* line 496, ../sass/styles.scss */
+#leftBar .container {
+  overflow: scroll;
+  padding-right: 15px;
+}
+/* line 503, ../sass/styles.scss */
+#leftBar .innerContainer {
+  width: 90%;
+}
+
+/* line 509, ../sass/styles.scss */
+#rightBar .container {
+  width: auto;
+}
+
+/* line 513, ../sass/styles.scss */
+#helpBar {
+  width: 100%;
+  position: absolute;
+  bottom: 0vw;
+  z-index: 4;
+  display: block;
+  margin: auto;
+}
+
+/* line 523, ../sass/styles.scss */
+.help {
+  height: 30px;
+}
+/* line 525, ../sass/styles.scss */
+.help p {
+  height: 150%;
+  text-align: center;
+  color: white;
+  background-color: black;
+  width: 25%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  font-size: 1em;
+}
+
+/* line 541, ../sass/styles.scss */
+.expandedSkip p {
+  color: red;
+}
+
+/* line 546, ../sass/styles.scss */
+.expandedHelp {
+  height: 50px;
+}
+/* line 548, ../sass/styles.scss */
+.expandedHelp p {
+  font-size: 1.5em;
+}
+
+/* line 561, ../sass/styles.scss */
+#tutorial button {
+  width: 100%;
+  bottom: 0%;
+}
+
+/* line 595, ../sass/styles.scss */
+#rightAreaMask {
+  background-color: black;
+  z-index: 5;
+  position: absolute;
+  left: 300px;
+  display: none;
+  opacity: 0;
+}
+
+/* line 604, ../sass/styles.scss */
+#allowProgressMask {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 7;
+}
+
+/* line 612, ../sass/styles.scss */
+#leftAreaMask {
+  background-color: black;
+  z-index: 5;
+  position: absolute;
+  right: 300px;
+  display: none;
+  opacity: 0;
+}
+
+/* line 621, ../sass/styles.scss */
+.opaqueBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 627, ../sass/styles.scss */
+#peripheralAreaMask {
+  background-color: black;
+  z-index: 2;
+  position: absolute;
+  opacity: 0;
+  display: none;
+}
+
+/* line 635, ../sass/styles.scss */
+.feedField {
+  border: 0px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+/* line 642, ../sass/styles.scss */
+#inputNewFeed {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+/* line 647, ../sass/styles.scss */
+#inputNewFeed #filterFeed {
+  width: 100%;
+}
+/* line 651, ../sass/styles.scss */
+#inputNewFeed .button {
+  height: 30px;
+  width: 10%;
+  font-size: 110%;
+  margin: 0px;
+}
+/* line 658, ../sass/styles.scss */
+#inputNewFeed .feedField {
+  background-color: #f4f4f4;
+}
+/* line 662, ../sass/styles.scss */
+#inputNewFeed #newFeedField {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  float: left;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+/* line 677, ../sass/styles.scss */
+#inputNewFeed .feedField:hover {
+  background-color: black;
+}
+/* line 679, ../sass/styles.scss */
+#inputNewFeed .feedField:hover a {
+  color: black;
+}
+/* line 685, ../sass/styles.scss */
+#inputNewFeed #searchButton {
+  float: right;
+  z-index: 3;
+  position: relative;
+  float: left;
+}
+/* line 692, ../sass/styles.scss */
+#inputNewFeed #saveFeedButton {
+  float: left;
+  bottom: 20px;
+}
+
+/* line 698, ../sass/styles.scss */
+.bg {
+  background-color: #F2F2F2;
+}
+
+/* line 702, ../sass/styles.scss */
+.clearOptionsMask {
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  position: absolute;
+  display: none;
+}
+
+/* line 710, ../sass/styles.scss */
+.optionsHeader {
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 1.25em;
+  z-index: 3;
+  text-align: center;
+  position: absolute;
+}
+
+/* line 719, ../sass/styles.scss */
+h4 {
+  margin-top: 0px;
+}
+
+/* line 723, ../sass/styles.scss */
+.options {
+  background-color: #F2F2F2;
+  border-top: 3px solid black;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 100px;
+  left: 0px;
+  z-index: 3;
+}
+/* line 732, ../sass/styles.scss */
+.options span {
+  display: block;
+  font-style: oblique;
+  z-index: 3;
+}
+
+/* line 739, ../sass/styles.scss */
+#leftOptions {
+  overflow: hidden;
+}
+
+/* line 742, ../sass/styles.scss */
+#rightOptions {
+  overflow: hidden;
+}
+
+/* line 748, ../sass/styles.scss */
+.hideOpts {
+  height: 0px;
+}
+
+/* line 752, ../sass/styles.scss */
+.optionsMask {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  opacity: .0;
+  z-index: 2;
+  visibility: hidden;
+}
+
+/* line 765, ../sass/styles.scss */
+.optMaskVisible {
+  visibility: visible;
+}
+
+/* line 772, ../sass/styles.scss */
+.expandedOptions {
+  height: 25%;
+}
+
+/* line 776, ../sass/styles.scss */
+.button {
+  background-color: #d9d9d9;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 2.5px;
+}
+/* line 781, ../sass/styles.scss */
+.button:focus {
+  outline: none;
+}
+/* line 785, ../sass/styles.scss */
+.button:hover {
+  background-color: black;
+  color: white;
+}
+/* line 792, ../sass/styles.scss */
+.button:active {
+  background-color: black;
+  color: white;
+}
+
+@media (max-height: 760px) {
+  /* line 803, ../sass/styles.scss */
+  .leftarrow:nth-child(2) {
+    visibility: hidden;
+  }
+
+  /* line 806, ../sass/styles.scss */
+  .rightarrow:nth-child(2) {
+    visibility: hidden;
+  }
+}
+@media (max-height: 150px) {
+  /* line 812, ../sass/styles.scss */
+  .leftarrow:nth-child(1) {
+    visibility: hidden;
+  }
+
+  /* line 815, ../sass/styles.scss */
+  .rightarrow:nth-child(1) {
+    visibility: hidden;
+  }
+}
+@media (min-width: 1544px) {
+  /* line 822, ../sass/styles.scss */
+  #inputNewFeed {
+    font-size: .9em;
+  }
+
+  /* line 826, ../sass/styles.scss */
+  .openTab {
+    display: none;
+  }
+}
+@media (max-width: 390px) {
+  /* line 831, ../sass/styles.scss */
+  .openTab {
+    width: 10%;
+  }
+
+  /* line 835, ../sass/styles.scss */
+  .leftarrow {
+    left: 5px;
+  }
+
+  /* line 838, ../sass/styles.scss */
+  .rightarrow {
+    right: 5px;
+  }
+}
+@media (max-width: 944px) {
+  /* line 843, ../sass/styles.scss */
+  #inputNewFeed {
+    width: 100%;
+  }
+
+  /* line 846, ../sass/styles.scss */
+  #main {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+<div id = "accountInfo" ng-controller = "rightBar" ng-right-click="" ng-click="clickRightBar()">
+  <div id = "rightOptsMask" class = "optionsMask"  ng-click="retractOptions(true)"></div>
+  <div ng-model = "destroyCotroller">
+    <div ng-start-up = 'destroyController'>
+		<h4 class="page-header">Welcome, <%=username%>!</h4> 
+		<div id = "accountFolders" data-targ = "<%=user%>" data-token = "<%=token%>" data-incomingfolders = "<%=folders%>"></div>
+        
+		<button  ng-click = "logout()" style = "margin-top: 10px;" class = "button registerButton" id = "actionSelect" data-target="users/logout" >[logout]</button>
+
+	</div>
+  </div>
+
+  <div id = "rightOptions" class ="hideOpts options rightOpts anim" ng-click="pinOptions()" ng-click="check()" ng-mouseover="expandOptions()" ng-mouseleave="retractOptions()">
+    <div class = "optionsHeader"><h4>Options</h4></div>
+    <div class = "optionsContainer">
+      <input class = "button" type="checkbox" ng-model="autoLoginOpt" ng-change="updateLoginOpt()" ng-click=""/>Automatically Log In
+    </div>
+  </div>
+</div> 

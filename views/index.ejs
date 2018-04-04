@@ -1,0 +1,147 @@
+<!doctype html>
+
+<html ng-app="mainModule" id = "mainModule">
+  <head>
+    <title>RSS Nest</title> 
+    <meta charset="utf-8">
+    <meta name= "viewport" content = "width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="include.js"></script>
+    <link type="text/css" rel="stylesheet" href="stylesheets\styles.css"/>  
+  </head>
+
+  <div id = "rightAreaMask" class = "opaqueBg"></div>
+  <div id = "peripheralAreaMask" class = "opaqueBg"></div>
+  <div id = "leftAreaMask" class = "opaqueBg"> </div>
+
+  <div id = "tutorial" class = "dialogue centered" ng-controller="tutorialController" ng-right-click="" ng-init = "loaded()" ng-click="getNextTutItem()" >
+    <p ng-model = 'tutorialText' class = "">{{tutorialText}}</p>
+    <button class = "button anim" type = "button" 
+      ng-right-click="" 
+      ng-click = "skipTutorial()" 
+      ng-mouseover="expandSkip()" 
+      ng-mouseleave="retractSkip()"> Skip </button>
+    <div id = "tutMask" class = "mask" ></div>       
+    <div class = "tutorialBg"></div> 
+  </div>
+    
+  <div id = "saveDialogue" class = "dialogue centered" ng-right-click="" ng-controller="saveController">
+    <p>{{saveConfirmationText}}</p>
+    <input id = 'confirmButt' class = "save saveButton button " type = "button" value ="[yes]" ng-click="confirmSave(newFeed)"/>
+    <input id = 'denyButt' class = "save saveButton button" type = "button" value ="[no]" ng-click="denySave()"/>
+    <div class = "tutorialBg"></div> 
+    <div id = "saveMask" class = "mask" ng-right-click="hideMenus()" ng-click="hideMenus()"></div>
+  </div>
+
+  <div id = "rClickMenu" ng-model = "selectionContext"  ng-right-click=""  ng-controller="menuController" ng-right-click="">
+    <div id = "clickBg" class = "bg" ></div>
+    <p>{{selectionContext.title}}</p>
+    <ul>
+      <li ng-repeat="action in selectionContext.actions" >
+        <input class = "button rClickButton" type = "button" 
+                value ="{{action}}" 
+                ng-if ="action.active"
+                ng-right-click="" 
+                ng-click = "performAction(action)"/>            
+        <input class = "button rClickButton disabled" type = "button" 
+                value ="{{action}}" 
+                ng-if ="!action.active"
+                ng-right-click="" 
+                ng-click = "performAction(action)"/>            
+      </li>
+    </ul>
+    <div id = "clickMask" class = "mask"  ng-right-click="hideMenus()" ng-click="hideMenus()"></div>
+  </div>
+
+  <body ng-controller = "global" ng-click="broadCastClick()" ng-cloak>
+    <div id = "leftBar" class = "sidebar">
+      <div class = "container">
+        <div class = "innerContainer">
+          <h2>RSS Nest</h2>
+          <h5>Subscriptions</h5>
+          <div ng-controller = "leftBar" ng-right-click="" ng-click="clickLeftBar()">
+            <div id = "leftOptsMask" class = "optionsMask" ng-click="retractOptions(true)" ></div>
+            <div class = "subTitle"><span>Folders</span><input class = "button" id = "addFolder" type="button" value ="[new]" name="newfolder" ng-click="addFolder()"/></div>
+            <ul ng-model="folders" class="folderList">
+            <!-- CHECK THIS OUT -->
+            <!-- https://codeutopia.net/blog/2014/11/10/angularjs-best-practices-avoid-using-ng-repeats-index/ -->
+              <li ng-repeat="folder in folders track by $index" class = 'anim'>
+              <!-- <li ng-repeat="folder in folders track by $index" class = 'folder anim'> -->
+                <input class = "button folderButton" maxlength="19" ng-if ="!folder.renaming" type = "button" value ="{{folder.name}}" ng-click="selectFolder(folder)"
+                ng-right-click="launchFolderContext(folder)"/>
+                <form ng-if ="folder.renaming" ng-submit="finishFolderRename(folder)">
+                  <input maxlength="19" class = "folderButton renameButton" ng-model = "folder.name" type = "text" value ="{{folder.name}}" ng-click="selectFolder(folder)"/>
+                </form>
+                <ul class = "subList">
+                  <li ng-repeat="sub in folder.subscriptions">
+                    <input class = "folderSubButton button" ng-if="!sub.renaming" type = "button" ng-right-click="launchFolderContext(folder, sub)" value ="{{sub.name}}" ng-click="selectSub(sub)"/>
+                    <form ng-if ="sub.renaming"  ng-submit="finishSubRename(sub)"> <!-- ng-model should probably be renamed -->
+                      <input maxlength="19" class = "folderSubButton renameButton" id = "subButton"  ng-model = "sub.name" type = "text" value ="{{sub.name}}" ng-click="selectSub(folder)"/>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div id = "leftOptions" class ="hideOpts options leftOpts anim" ng-click="pinOptions()" ng-mouseover="expandOptions()" ng-mouseleave="retractOptions()">
+              <div class = "optionsHeader"><h4>Options</h4></div>
+              <div class = "optionsContainer">
+                <input class = "button" type="checkbox" ng-model="saveFoldersOpt" ng-change="updateSaveOption()" ng-click=""/>Save Folders Locally
+                <button class = "button" ng-click="deleteLocalFolders()">Delete Local Folders</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-cloak id = "main" ng-init="createNewFeed(newFeed)" class = "anim" ng-controller="centerController" ng-click="clickCenter()" ng-right-click=""> 
+      <div ng-controller = "maskController" id = "centerClickMask" class = "clearOptionsMask" ng-click = "clearAllOptions()" ng-right-click=""> </div>
+      <div id = "inputNewFeed">
+       <input id = "filterFeed" class = "feedField button" maxlength="100" type = "text" placeholder = "[Filter Feed]" ng-change="filterUpdate()" ng-model = "searchText"/>
+        <input id = "saveFeedButton" class = "button" class ="" type = "button" value = "[save]" ng-click="saveToFolder(newFeed)"/>
+        <input id = "newFeedField" class = "feedField button" maxlength="200" type = "text" placeholder = "[New Feed]" ng-model = "newFeed" />
+        <input id = "searchButton" class = "button"  type = "button" value = "[search]" ng-click="createNewFeed(newFeed)"/>
+      </div>  
+      <div id = "leftBarOpen" class = "openTab" ng-click="checkLeft()">
+        <div class = "arrow leftarrow" style = "top: 30px;"></div> 
+        <div class = "arrow leftarrow" style = "top: 47vh;"></div> 
+        <div class = "arrow leftarrow" style = "bottom: 10px;"></div>  
+      </div>
+      <div id = "rightBarOpen" class = "openTab" ng-click="checkRight()"> 
+        <div class = "arrow rightarrow" style = "top: 30px;"></div>  
+        <div class = "arrow rightarrow" style = "top: 47vh;"></div>  
+        <div class = "arrow rightarrow" style = "bottom: 10px;"></div>  
+      </div>
+      <div id = "stream" class = "container">
+        <div>
+          <ul id ="feedList">
+            <li class = "feedItem anim" ng-repeat="article in outPut|orderBy:'title'|filter:filterSearch track by $index" target="_blank" rel="noopener noreferrer"> 
+              <a href = "{{article.link}}">{{article.title}}</a>
+            </li>
+          </ul>
+        </div> 
+
+      </div> 
+      <div id = "helpBar" class = "help anim expand" ng-mouseover="expandHelp()" ng-mouseleave="retractHelp()" ng-click = "startTutorial()">
+        <p class = "anim" >Start Tutorial</p>
+      </div>
+    </div>
+
+    <div ng-cloak>
+      <div id = "rightBar" class = "sidebar">
+        <div class = "container">
+          <div id = "accounts">
+            <h2>RSS Nest</h2>
+            <h5>Account</h5>
+            <div id = "membershipStatus"><% include partials/noauth%></div>
+            <!-- <div id = "membershipStatus"><% include partials/login%></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <div id = "darkBg" class = "opaqueBg">
+  </div>
+</html>   
