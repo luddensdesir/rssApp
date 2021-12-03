@@ -2,11 +2,11 @@
   "name": "app",
   "version": "1.0.0",
   "description": "app description",
-  "engines":{
+  "engines": {
     "node": "7.9.0"
   },
-  "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,18 +17,25 @@
     "body-parser": "*",
     "connect-flash": "*",
     "cookie-parser": "^1.4.1",
+    "ejs": "^3.1.6",
     "express": "*",
     "express-handlebars": "*",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "^3.2.0",
+    "gibberish-aes": "^1.0.0",
     "jquery": "*",
+    "jsonwebtoken": "^8.5.1",
     "mongo-db": "*",
     "mongodb": "^2.2.26",
     "mongoose": "*",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.3",
+    "nodemon": "^2.0.12",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
-    "rss-parser": "^2.10.1"
+    "rss-parser": "^2.10.1",
+    "try-require": "^1.2.1"
   }
 }

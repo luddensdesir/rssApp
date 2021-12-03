@@ -9,22 +9,26 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 // var mongo = require('mongodb');
 var mongoose = require('mongoose');
-// var morgan      = require('morgan');
+var morgan      = require('morgan');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var keys = require('./apiKeys.js');
 
-var targetConnection  = require('./private').connection;
+console.log(keys);
+
+var targetConnection  = keys.MONGODB_URI;
+
+console.log("targetConnection");
+console.log(targetConnection);
 
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
 
 mongoose.connect(targetConnection, options);
 
-var db = mongoose.connection;
-
 var app = express();
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 app.use(session({
     secret: 'mySuperSecretSecret',
@@ -32,6 +36,7 @@ app.use(session({
     resave: true
 }));
 
+// ejs.delimiter = "%";
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname,'views'))
 
@@ -76,7 +81,7 @@ var apiRoutes = express.Router();
 app.use('/', routes);
 app.use('/users', users); 
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 8081));
 
 app.listen(app.get('port'), function(){
   console.log('Server started on port '+app.get('port'));

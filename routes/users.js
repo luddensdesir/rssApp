@@ -6,7 +6,7 @@ var jwt    = require('jsonwebtoken');
 var EmailSystem = require('../models/email');
 var parser = require('rss-parser');
 var User = require('../models/user');
-var secret  = require('../private').secret;
+var secret  = require("../apiKeys").secret;
 
 var AES = require('gibberish-aes/src/gibberish-aes.js'); 
 //https://www.npmjs.com/package/gibberish-aes
