@@ -12,7 +12,7 @@ var AES = require('gibberish-aes/src/gibberish-aes.js');
 //https://www.npmjs.com/package/gibberish-aes
 
 var aesSecret = "This sentence is not so secret";
-var aesPass = "1234"
+var aesPass = "1234";
 AES.size(128);
 
 router.post('/loginPage', function(req, res){

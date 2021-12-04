@@ -35,7 +35,7 @@
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
-    "rss-parser": "^2.10.1",
+    "rss-parser": "2.10.1",
     "try-require": "^1.2.1"
   }
 }
